@@ -4,8 +4,33 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNmNiYWQ2ZjUyZWMxM2JiNjQwNDgxNDE1MmFjYzFiOCIsIm5iZiI6MTc0MDUwOTg1MC44MjMsInN1YiI6IjY3YmUxMjlhNTQ1ODljZDg1NzU2MDkxOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NZi2I3upwDYK4IPQQ4ulXwIZDKk1nJilVjiv7gUQSDs'
+      Authorization: 'Bearer '+process.env.REACT_APP_API_OPTIONS
     }
   };
 export const NOWPLAYING_API = "https://api.themoviedb.org/3/movie/now_playing";
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original/";
+export const SUPPORTED_LANGUAGES = [
+  {
+    identifier : "en",
+    name : "English"
+  },
+  {
+    identifier : "hindi",
+    name : "Hindi"
+  },
+  {
+    identifier : "telugu",
+    name : "Telugu"
+  },
+  {
+    identifier : "russian",
+    name : "Russian"
+  },
+  {
+    identifier : "korean",
+    name : "Korean"
+  }
+]
+export const OPENAPI_KEY = process.env.REACT_APP_OPENAPI_KEY 
+
+export const GEMINI_API_KEY = process.env.REACT_APP_GEMINIAPI_KEY

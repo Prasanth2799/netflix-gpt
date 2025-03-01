@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@google/generative-ai": "^0.22.0",
     "@reduxjs/toolkit": "^2.5.0",
     "cra-template": "1.2.0",
     "firebase": "^11.2.0",
+    "openai": "^4.86.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
