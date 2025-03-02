@@ -50,8 +50,8 @@ signOut(auth).then(() => {
     dispatch(changeLanguage(e.target.value))
   }
   return (
-    <div className='absolute w-screen bg-gradient-to-b from-black z-10 flex justify-between'>
-        <img className="w-60" src={LOGO} alt='netflix-logo' />
+    <div className='absolute w-screen bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between items-center'>
+        <img className="w-60 mx-auto md:mx-0" src={LOGO} alt='netflix-logo' />
         {user && <div className='flex items-center'>
           {gptSearch && (<select className='p-2 bg-gray-600 text-white rounded-sm' onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map(lang => (

@@ -14,7 +14,7 @@ const GptSearchBar = () => {
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const prompt = "Act as a movie recommendation system and suggest some movie names for the query :" +
       searchText.current.value +
-      ", give only six movie names, comma seperated. For example Salaar, Vikram, KGF, Baahubali: The Beginning, Pushpa, URI";
+      ", give only six movie names, comma seperated. For example Salaar, Vikram, KGF, Baahubali: The Beginning, Pushpa, URI. But don't give other movies as suggestions example if I asked give list of Prabhas movies just give movies of prabhas or If movie name is Darling just give Prabhs who acted in the Darling movie, but don't give Strange Darling, Monica O My Darling .";
 
     const result = await model.generateContent(prompt);
     const gptResponse = result.response.text();
@@ -32,8 +32,8 @@ const GptSearchBar = () => {
         return json.results
     }
     return(
-        <div className="pt-36 flex justify-center">
-            <form className="grid grid-cols-12 w-1/2 bg-black" onSubmit={(e) => e.preventDefault()}>
+        <div className="pt-[40%] md:pt-36 flex justify-center">
+            <form className="grid grid-cols-12 md:w-1/2 w-full bg-black" onSubmit={(e) => e.preventDefault()}>
                 <input type="text" ref={searchText} placeholder={lang[langKey].gptPlaceHolder} className="p-2 m-2 rounded-sm border-red-500 col-span-9"/>
                 <button className="p-2 m-2 rounded bg-red-600 col-span-3 text-white" onClick={handleSearchGpt}>{lang[langKey].search}</button>
             </form>
